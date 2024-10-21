@@ -30,7 +30,7 @@ message flash en haut d'une vue existante, nous allons intégrer un système de 
 
 Les messages pourront être de 4 types : *success* (vert),
 *info* (jaune), *warning* (orange) et *danger* (rouge). Chaque type peut
-comporter plusieurs messages. Voici 2 exemples : 
+comporter plusieurs messages. Voici 2 exemples dans le cas d'un site qui gèrerait aussi des voitures : 
 
 <div style="
     display: flex;
@@ -142,11 +142,11 @@ $messagesFlash = [
 4. Testez les messages flash. Pour ceci, appelez une vue en rajoutant le tableau des
    messages dans le *query string* de la manière suivante
    ```text
-   http://webinfo.iutmontp.univ-montp2.fr/~mon_login/TD-PHP/TD8/web/controleurFrontal.php?messagesFlash[success][]=Hello+World
+   http://localhost/tds-php/TD9/web/controleurFrontal.php?messagesFlash[success][]=Hello+World
    ```
    ou
    ```text
-   http://webinfo.iutmontp.univ-montp2.fr/~mon_login/TD-PHP/TD8/web/controleurFrontal.php?messagesFlash[danger][]=Message+de+danger+1&messagesFlash[danger][]=Message+de+danger+2
+   http://localhost/tds-php/TD9/web/controleurFrontal.php?messagesFlash[danger][]=Message+de+danger+1&messagesFlash[danger][]=Message+de+danger+2
    ```
 
 </div>
@@ -154,7 +154,8 @@ $messagesFlash = [
 ### Redirection
 
 Il est pratique pour le site de pouvoir rediriger sur une autre page en cas
-d'erreur ou de succès. Par exemple, le client est sur le formulaire de création d'une voiture
+d'erreur ou de succès. Par exemple, si le site gère les voitures et que le
+client est sur le formulaire de création d'une voiture
 
 ![VoitureCreate]({{site.baseurl}}/assets/TD7/VoitureCreate.png){: .blockcenter}
 
@@ -314,7 +315,7 @@ message puis appelaient une autre vue.
 1. En particulier, supprimez les vues désormais inutiles comme
    `utilisateurCree.php`, `utilisateurConnecte.php`,
    `utilisateurDeconnecte.php`, `utilisateurMisAJour.php` et
-   `utilisateurSupprime.php`. Faites de même pour les vues de voiture.
+   `utilisateurSupprime.php`. Faites de même pour les vues *trajets*.
 
    *Note* : Par exemple, en cas de succès de création d'un utilisateur, on
    pourrait ajouter un message flash de succès *L'utilisateur a bien été créé*
